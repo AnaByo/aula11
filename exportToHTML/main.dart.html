@@ -1,0 +1,94 @@
+<html>
+<head>
+<title>main.dart</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #eeffff;}
+.s1 { color: #c3e88d;}
+.s2 { color: #89ddff;}
+.s3 { color: #c792ea; font-style: italic;}
+.s4 { color: #f78c6c;}
+</style>
+</head>
+<body bgcolor="#212121">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+main.dart</font>
+</center></td></tr></table>
+<pre><span class="s0">import </span><span class="s1">'dart:math'</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">'package:flutter/material.dart'</span><span class="s2">;</span>
+
+<span class="s3">void </span><span class="s0">main</span><span class="s2">(){</span>
+  <span class="s0">runApp</span><span class="s2">(</span><span class="s0">MaterialApp</span><span class="s2">(</span>
+    <span class="s0">debugShowCheckedModeBanner</span><span class="s2">: </span><span class="s3">false</span><span class="s2">,</span>
+    <span class="s0">title</span><span class="s2">: </span><span class="s1">'App frases aleatórias'</span><span class="s2">,</span>
+    <span class="s0">home</span><span class="s2">: </span><span class="s0">frases</span><span class="s2">(),</span>
+  <span class="s2">));</span>
+<span class="s2">}</span>
+<span class="s3">class </span><span class="s0">frases </span><span class="s3">extends </span><span class="s0">StatefulWidget</span><span class="s2">{</span>
+  <span class="s3">const </span><span class="s0">frases</span><span class="s2">({</span><span class="s0">Key</span><span class="s2">? </span><span class="s0">key</span><span class="s2">}) : </span><span class="s3">super</span><span class="s2">(</span><span class="s0">key</span><span class="s2">: </span><span class="s0">key</span><span class="s2">);</span>
+  <span class="s0">@override</span>
+  <span class="s0">State</span><span class="s2">&lt;</span><span class="s0">frases</span><span class="s2">&gt; </span><span class="s0">createState</span><span class="s2">() =&gt; </span><span class="s0">_frasesState</span><span class="s2">();</span>
+<span class="s2">}</span>
+<span class="s3">class </span><span class="s0">_frasesState </span><span class="s3">extends </span><span class="s0">State</span><span class="s2">&lt;</span><span class="s0">frases</span><span class="s2">&gt;{</span>
+  <span class="s3">var </span><span class="s0">_frases </span><span class="s2">= [</span>
+    <span class="s1">'Você é apenas um idiota que nasceu com uma genética boa. - Naruto Uzumaki'</span><span class="s2">,</span>
+    <span class="s1">'Viver é comer, dormir e arrumar brigas. - Natsu Dragneel, Fairy Tail'</span><span class="s2">,</span>
+    <span class="s1">'Eu estou cansado de não fazer nada, mas eu sou muito preguiçoso pra fazer alguma coisa. - OreGairu'</span><span class="s2">,</span>
+    <span class="s1">'Há três coisas que não posso tolerar: covardia, cortes de cabelo ruins e insurreição militar, e é muito lamentável que nosso amigo Vegeta possua todas essas três. - Freeza, Dragon Ball Z'</span><span class="s2">,</span>
+    <span class="s1">'Você quer que eu diga a verdade ou continuamos amigos? - Dragon Ball Z'</span><span class="s2">,</span>
+    <span class="s1">'Se eu pudesse vender meu tédio, tenho certeza de que ficaria rico. - Montaiji-Tachi Ga Isekai Kara Kuru Sou Desu Yo'</span><span class="s2">,</span>
+    <span class="s1">'Eu vou ficar bem. Afinal, eu sou o mais forte que existe. - Gojo Satoru'</span><span class="s2">,</span>
+    <span class="s1">'Quando eu não tinha nada nem ninguém, eu tinha a dor. - Pain'</span>
+    <span class="s1">'Lar é onde tem alguém sempre pensando em você. - Naruto Uzumaki'</span>
+  <span class="s2">];</span>
+    <span class="s3">var </span><span class="s0">_frasesGerada </span><span class="s2">= </span><span class="s1">'Gerador de frases abaixo!'</span><span class="s2">;</span>
+    <span class="s3">void </span><span class="s0">_gerarFrase</span><span class="s2">(){</span>
+      <span class="s3">var </span><span class="s0">numeroSorteado </span><span class="s2">= </span><span class="s0">Random</span><span class="s2">().</span><span class="s0">nextInt</span><span class="s2">(</span><span class="s0">_frases</span><span class="s2">.</span><span class="s0">length</span><span class="s2">);</span>
+      <span class="s0">setState</span><span class="s2">((){</span>
+        <span class="s0">_frasesGerada </span><span class="s2">= </span><span class="s0">_frases</span><span class="s2">[</span><span class="s0">numeroSorteado</span><span class="s2">];</span>
+   <span class="s2">});</span>
+  <span class="s2">}</span>
+  <span class="s0">@override</span>
+  <span class="s0">Widget build </span><span class="s2">(</span><span class="s0">BuildContext context</span><span class="s2">) {</span>
+    <span class="s3">return </span><span class="s0">Scaffold</span><span class="s2">(</span>
+      <span class="s0">appBar</span><span class="s2">: </span><span class="s0">AppBar</span><span class="s2">(</span>
+        <span class="s0">title</span><span class="s2">: </span><span class="s0">Text</span><span class="s2">(</span><span class="s1">'Animecon'</span><span class="s2">),</span>
+        <span class="s0">backgroundColor</span><span class="s2">: </span><span class="s0">Colors</span><span class="s2">.</span><span class="s0">black</span><span class="s2">,</span>
+      <span class="s2">),</span>
+      <span class="s0">body</span><span class="s2">: </span><span class="s0">Center</span><span class="s2">(</span>
+        <span class="s0">child</span><span class="s2">: </span><span class="s0">Container</span><span class="s2">(</span>
+          <span class="s0">padding</span><span class="s2">: </span><span class="s0">EdgeInsets</span><span class="s2">.</span><span class="s0">all</span><span class="s2">(</span><span class="s4">15</span><span class="s2">),</span>
+          <span class="s0">child</span><span class="s2">: </span><span class="s0">Column</span><span class="s2">(</span>
+            <span class="s0">mainAxisAlignment</span><span class="s2">: </span><span class="s0">MainAxisAlignment</span><span class="s2">.</span><span class="s0">spaceAround</span><span class="s2">,</span>
+            <span class="s0">crossAxisAlignment</span><span class="s2">: </span><span class="s0">CrossAxisAlignment</span><span class="s2">.</span><span class="s0">center</span><span class="s2">,</span>
+            <span class="s0">children</span><span class="s2">: &lt;</span><span class="s0">Widget</span><span class="s2">&gt;[</span>
+              <span class="s0">Image</span><span class="s2">.</span><span class="s0">asset</span><span class="s2">(</span><span class="s1">'img/logo.png'</span>
+              <span class="s2">),</span>
+              <span class="s0">Text</span><span class="s2">(</span><span class="s0">_frasesGerada</span><span class="s2">,</span>
+                <span class="s0">style</span><span class="s2">: </span><span class="s0">TextStyle</span><span class="s2">(</span>
+                  <span class="s0">fontSize</span><span class="s2">: </span><span class="s4">20</span><span class="s2">,</span>
+                  <span class="s0">fontStyle</span><span class="s2">: </span><span class="s0">FontStyle</span><span class="s2">.</span><span class="s0">italic</span><span class="s2">,</span>
+                  <span class="s0">color</span><span class="s2">: </span><span class="s0">Colors</span><span class="s2">.</span><span class="s0">black</span><span class="s2">,</span>
+                <span class="s2">),</span>
+              <span class="s2">),</span>
+              <span class="s0">ElevatedButton</span><span class="s2">(</span>
+                <span class="s0">onPressed</span><span class="s2">: </span><span class="s0">_gerarFrase</span><span class="s2">,</span>
+                <span class="s0">child</span><span class="s2">: </span><span class="s0">Text</span><span class="s2">(</span><span class="s1">'New Phrase'</span><span class="s2">,</span>
+                  <span class="s0">style</span><span class="s2">: </span><span class="s0">TextStyle</span><span class="s2">(</span>
+                    <span class="s0">fontSize</span><span class="s2">: </span><span class="s4">20</span><span class="s2">,</span>
+                    <span class="s0">color</span><span class="s2">: </span><span class="s0">Colors</span><span class="s2">.</span><span class="s0">black</span><span class="s2">,</span>
+                    <span class="s0">fontWeight</span><span class="s2">: </span><span class="s0">FontWeight</span><span class="s2">.</span><span class="s0">bold</span>
+                <span class="s2">),</span>
+                <span class="s2">),</span>
+              <span class="s2">),</span>
+            <span class="s2">],</span>
+          <span class="s2">),</span>
+        <span class="s2">),</span>
+      <span class="s2">),</span>
+    <span class="s2">);</span>
+  <span class="s2">}</span>
+<span class="s2">}</span></pre>
+</body>
+</html>
